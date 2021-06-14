@@ -15,7 +15,7 @@ class CreateProductPropertiesTable extends Migration
     {
         Schema::create('product_properties', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->unsignedBigInteger('product_id');
             $table->tinyInteger('property_id');
             $table->string('value');

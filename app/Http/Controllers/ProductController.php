@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+
+    private $productRepository;
+
+    public function __construct(ProductRepository $productRepository)
+    {
+        $this->productRepository = $productRepository;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +22,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+//        $products = Product::all();
+        $products = $this->productRepository->all();
         return view('products.products', compact('products'));
     }
 
@@ -47,7 +56,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::find($id);
+//        $product = Product::find($id);
+        $product = $this->productRepository->find($id);
+
         if(empty($product)){
             abort(404);
         }

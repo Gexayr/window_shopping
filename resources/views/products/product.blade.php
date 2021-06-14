@@ -33,7 +33,7 @@
                                     </tr>
                                     @endforeach
                                 </table>
-                                <a class="btn btn-dark my-2" href="#" role="button">Add to Cart</a>
+                                <a class="btn btn-dark my-2 add-to-cart" href="javascript: void(0)" data-id="{{$product->id}}" role="button">Add to Cart</a>
                             </div>
                         </div>
                     </div>
