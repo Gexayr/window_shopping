@@ -33,7 +33,7 @@ $(document).ready(function(){
         setInterval(function(){
             $('.product-removed').hide();
         }, 3000);
-        
+
         $.ajax({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

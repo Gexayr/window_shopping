@@ -22,6 +22,12 @@ class Product extends Model
     }
     public function properties()
     {
-        return $this->hasMany(ProductProperties::class)->where('property_id', $this->productType->id);
+//        dd($this->productType->id);
+//        dd($this->hasMany(ProductProperties::class)->where('property_id', $this->productType->id)->get());
+//        dd($this->productType->properties);
+//        $queries = $this->hasMany(ProductProperties::class);
+
+        return $this->hasMany(ProductProperties::class);
+
     }
 }

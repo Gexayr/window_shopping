@@ -103,9 +103,9 @@ class OrderController extends Controller
         //
     }
 
-    public function addToCart(Request $request, int $id)
+    public function addToCart(int $id)
     {
-        $inCart = \Cookie::get('inCart');
+        $inCart = Cookie::get('inCart');
         if(is_null($inCart)){
             $inCart = [];
         } else {
@@ -133,7 +133,7 @@ class OrderController extends Controller
 
     public function checkout()
     {
-        $inCart = json_decode(\Cookie::get('inCart'), true);
+        $inCart = json_decode(Cookie::get('inCart'), true);
 
         $inCart = array_unique($inCart);
 

@@ -17,10 +17,11 @@ class CalculationTypeSeeder extends Seeder
         DB::table('calculation_types')->insert([
             [
                 'name' => 'with_tax',
-                'percent' => 23.5
+                'percent' => 23
             ],
             [
                 'name' => 'without_tax',
+                'percent' => 0
             ]
         ]);
     }

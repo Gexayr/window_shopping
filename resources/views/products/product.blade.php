@@ -3,6 +3,9 @@
 @section('content')
 
     <div class="container">
+        <div class="alert alert-success product-added">
+            <strong>Success!</strong> product added in your cart
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -25,8 +28,8 @@
                                     <tr>
                                         <td>{{$property->name}}</td>
                                         <td>
-                                            @foreach($product->properties as $product_property)
-                                                {{ $product_property->name . "-" . $product_property->value }}
+                                        @foreach($product->properties as $product_property)
+                                                {{ $product_property->name . " " . $product_property->value }}
                                                 <br>
                                             @endforeach
                                         </td>
