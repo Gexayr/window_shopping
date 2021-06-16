@@ -19,7 +19,7 @@
                                 <a href="{{route('products.show', ['product' => $product->id])}}">
                                     <img class="card-img-top" src="http://placehold.it/650x450&text={{$product->name}}" alt="">
                                 </a>
-                                <a class="text-reset" href="#"><h3 class="card-title display-4">{{Str::of($product->name)->limit(8)}}</h3></a>
+                                <a class="text-reset" href="{{route('products.show', ['product' => $product->id])}}"><h3 class="card-title display-4">{{Str::of($product->name)->limit(8)}}</h3></a>
                                 <h6>${{$product->price}}</h6>
                                 <a class="btn btn-dark my-2 add-to-cart" href="javascript: void(0)" data-id="{{$product->id}}" role="button">Add to Cart</a>
                             </div>
