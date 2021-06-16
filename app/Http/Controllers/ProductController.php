@@ -99,4 +99,17 @@ class ProductController extends Controller
     {
         //
     }
+
+    public function cart(Request $request)
+    {
+        $inCart = $request->cookie('inCart');
+
+    $inCart = json_decode($inCart, true);
+    if(is_null($inCart)){
+        $inCart = [];
+    }
+        $products = $this->productRepository->inCart($inCart);
+        return view('products.cart', compact('products'));
+
+    }
 }

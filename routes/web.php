@@ -15,17 +15,28 @@ use App\Http\Controllers\OrderController;
 |
 */
 
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/products');
 });
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', function () {
+    return redirect('/products');
+});
 
 Route::resource('products', ProductController::class)->only([
     'index', 'show'
 ]);
 
 Route::resource('orders', OrderController::class);
+
+Route::post('/add-to-cart/{id}', [OrderController::class, 'addToCart']);
+Route::post('/remove-from-cart/{id}', [OrderController::class, 'removeFromCart']);
+Route::get('/cart', [ProductController::class, 'cart'])->name('cart');
+Route::get('/checkout', [OrderController::class, 'checkout'])->name('checkout');

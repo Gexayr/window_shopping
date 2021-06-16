@@ -45,4 +45,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class);
     }
+    
+    public function calculationType()
+    {
+        return $this->belongsTo(CalculationType::class, "calculation_type");
+    }
 }

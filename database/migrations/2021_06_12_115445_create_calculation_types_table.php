@@ -16,6 +16,7 @@ class CreateCalculationTypesTable extends Migration
         Schema::create('calculation_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->double('percent')->default(0);
             $table->timestamps();
         });
     }

@@ -3,10 +3,14 @@
 @section('content')
 
     <div class="container">
+        <div class="alert alert-success product-added">
+            <strong>Success!</strong> product added in your cart
+        </div>
         <div class="row justify-content-center">
+
             <div class="container mb-4">
                 <div class="row">
-{{--                    @dd($products)--}}
+
                     @foreach($products as $product)
                     <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mt-4">
                         <div class="card shadow">

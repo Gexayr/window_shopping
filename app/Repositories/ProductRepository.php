@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\Product;
+use mysql_xdevapi\Collection;
 
 class ProductRepository
 {
@@ -21,5 +22,10 @@ class ProductRepository
     public function find($id): ?Product
     {
         return $this->product->find($id);
+    }
+    
+    public function inCart(array $inCart)
+    {
+        return $this->product->whereIn('id', $inCart)->get();
     }
 }

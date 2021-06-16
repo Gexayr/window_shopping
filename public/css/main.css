@@ -1,0 +1,10 @@
+.product-added,
+.product-removed{
+    position: fixed;
+    z-index: 1;
+    right: 25px;
+    bottom: 22px;
+    display: none;
+}
+
+
